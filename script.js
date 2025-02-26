@@ -48,11 +48,13 @@ function fetchData() {
     }
 
     const entry = data.find(e => e['AGE (IN MONTHS)'] === ageInput);
-    if (entry) {
+        if (entry) {
         const weightKey = selectedGender === 'boy' ? 'BOYS WEIGHT (KG)' : 'GIRLS WEIGHT (KG)';
         const heightKey = selectedGender === 'boy' ? 'BOYS HEIGHT (CM)' : 'GIRLS HEIGHT (CM)';
+        const type = selectedGender === 'boy' ? 'BOYS' : 'GIRLS';
         output.innerHTML = `
-            
+  
+            <P>${type}</p>
             <p><strong>Age :</strong> ${entry['AGE (IN MONTHS)']} months</p>
             <p><strong>Weight :</strong> ${entry[weightKey]} kg</p>
             <p><strong>Height :</strong> ${entry[heightKey]} cm</p>
