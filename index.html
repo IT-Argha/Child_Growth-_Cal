@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Child Growth Data</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Child Growth Data</h1>
+      <p class="subtitle">
+        Enter the age of the child (0-60 months) and select gender to view
+        growth data.
+      </p>
+
+      <!-- Age Input -->
+      <div class="input-group">
+        <input
+          type="number"
+          id="ageInput"
+          min="0"
+          max="60"
+          placeholder="Enter age (0-60)" />
+      </div>
+
+      <!-- Gender Selection -->
+      <div class="gender-selection">
+        <div class="gender-option" id="boy" onclick="selectGender('boy')">
+          <i class="fas fa-mars"></i>
+          <span>Boy</span>
+        </div>
+        <div class="gender-option" id="girl" onclick="selectGender('girl')">
+          <i class="fas fa-venus"></i>
+          <span>Girl</span>
+        </div>
+      </div>
+      <button onclick="fetchData()">Get Data</button>
+
+      <!-- Output -->
+      <div id="output" class="output-container"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
